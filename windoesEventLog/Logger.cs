@@ -41,11 +41,11 @@ namespace windoesEventLog
                
 
             }
-            if (EventLog.SourceExists("TestSource345")) { 
+            if (EventLog.SourceExists("MySource")) { 
             
-                EventLog log = new EventLog("TestLog");
+                EventLog log = new EventLog("MyTestLog");
 
-                log.Source = "TestSource345";
+                log.Source = "MySource";
 
                 log.WriteEntry(sbExceptionMessage.ToString(), EventLogEntryType.Error);
 

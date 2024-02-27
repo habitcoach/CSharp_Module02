@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics;
-using System.Diagnostics.PerformanceData;
+
 
 
 if (PerformanceCounterCategory.Exists("MyDemoCategoryCounter"))
@@ -25,7 +25,8 @@ counter.IncrementBy(2);
 counter.IncrementBy(2);
 counter.IncrementBy(2);
 
-
+for (int i = 0; i < 100; i++)
+{ counter.IncrementBy(2); }
 
 
 #region Notes
@@ -35,8 +36,8 @@ counter.IncrementBy(2);
 Open the performance monitor
 Now at the bottom clear all the counter
 Right click and click on add new counter
-Now under available counter tab choose MyDemoCatergoryCounter
-ONce choosen wait and in the instanc of selecred objecrt tab at the bottom choose "demo"
+Now under available counter tab choose MyDemoCategoryCounter
+Once chose wait and in the instance of selected object tab at the bottom choose "demo"
 NOw set the debug and when you increment to 2 you can see the bump in the graph
 
  */

@@ -5,46 +5,40 @@ using windoesEventLog;
 Console.WriteLine("Hello, World!");
 
 //Creating event source
-if (!EventLog.SourceExists("TestSource345"))
+if (!EventLog.SourceExists("MySource"))
 {
-    EventLog.CreateEventSource("TestSource345", "TestLog");
+    EventLog.CreateEventSource("MySource", "MyTestLog");
 }
 //This is to create event source.  Opne the event viewr to see the log TestLog
 Console.WriteLine("Event source created");
 
-//try
-//{
-//    throw new DivideByZeroException("This is dividie by zero exception");
-//  //  throw new AggregateException("This is an aggregate exception");
+try
+{
+    throw new DivideByZeroException("This is dividie by zero exception");
+      
 
-    
-//}
-
-//catch (DivideByZeroException ex)
-//{
-
-//    Logger.Log(ex);
-
-
-//}
-
-//catch (AggregateException ex)
-//{
-
-//    Logger.Log(ex);
-
-
-//}
-//finally {
-//    Console.WriteLine("Messaged logged");
-//}
-
- void MyMethod() { 
-
-
-    Thread.Sleep(3000);
 
 }
 
+catch (DivideByZeroException ex)
+{
+
+    Logger.Log(ex);
+   
+
+
+}
+
+catch (AggregateException ex)
+{
+
+    Logger.Log(ex);
+
+
+}
+finally
+{
+    Console.WriteLine("Messaged logged");
+}
 
 
